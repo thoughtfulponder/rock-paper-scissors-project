@@ -17,7 +17,7 @@ function getComputerChoice() {
     computerAnwser = "Scissors";
     // console.log("Scissors");
   }
-  return `computer choosed ${computerAnwser}!`;
+  return computerAnwser;
 }
 console.log(getComputerChoice());
 
@@ -26,7 +26,7 @@ function getHumanChoice() {
   let capChara = userChoice.slice(0, 1).toUpperCase();
   let lowerChara = userChoice.slice(1, userChoice.length).toLowerCase();
   userChoice = capChara + lowerChara;
-  return `human choosed ${userChoice}!`;
+  return userChoice;
 }
 console.log(getHumanChoice());
 
@@ -49,8 +49,8 @@ function playRound(computerChoice, humanChoice) {
  
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
 
 console.log(playRound(computerSelection, humanSelection));
