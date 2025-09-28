@@ -68,10 +68,12 @@ function playGame() {
       
       playRound(computerSelection, humanSelection);
       if ( i === 5) {
-        if (computerScore > humanScore) {
+        if (computerScore === humanScore) {
+          alert(" match draw")
+        } else if (computerScore > humanScore) {
           alert("computer won");
         } else {
-          alert("humsn won");
+          alert("human won");
         }
       }
     }
