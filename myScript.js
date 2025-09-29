@@ -59,7 +59,7 @@ function playGame() {
     }*/
   }
   
-  function runGame() {
+  /*function runGame() {
     for (let i = 1; i <= 5; i++) {
       let round = i;
       alert(`round ${round}`);
@@ -78,6 +78,22 @@ function playGame() {
       }
     }
   }
-  runGame();
+  runGame();*/
+  for (let i = 1; i <= 5; i++) {
+    let round = i;
+    alert(`round ${round}`);
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    playRound(computerSelection, humanSelection);
+    if (i === 5) {
+      if (computerScore === humanScore) {
+        alert("match draw");
+      } else if (computerScore > humanScore) {
+        alert("computer won");
+      } else {
+        alert("human won");
+      }
+    }
+  }
 }
 console.log(playGame());
