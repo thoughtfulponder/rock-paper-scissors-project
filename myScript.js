@@ -37,39 +37,39 @@ function playGame() {
     if (computerChoice === "Rock" && humanChoice === "Paper" ||
       computerChoice === "Paper" && humanChoice === "Scissors" ||
       computerChoice === "Scissors" && humanChoice === "Rock") {
-      alert(`You choosed ${computerChoice}!`); 
-      alert(`You choosed ${humanChoice}!`);
-      alert("You win this round!");
+      console.log(`Bot choosed ${computerChoice}!`); 
+      console.log(`You choosed ${humanChoice}!`);
+      console.log("You win this round!");
       humanScore++;
-      alert(`You scored ${humanScore}`);
+      console.log(`You scored ${humanScore}`);
     } else if (computerChoice === "Rock" && humanChoice === "Scissors" ||
       computerChoice === "Paper" && humanChoice === "Rock" ||
       computerChoice === "Scissors" && humanChoice === "Paper") {
-      alert(`Bot choosed ${computerChoice}!`); 
-      alert(`You choosed ${humanChoice}!`);
-      alert("Bot win this round!");
+      console.log(`Bot choosed ${computerChoice}!`); 
+      console.log(`You choosed ${humanChoice}!`);
+      console.log("Bot win this round!");
       computerScore++;
-      alert(`Bot scored ${computerScore}`);
+      console.log(`Bot scored ${computerScore}`);
     } else {
-      alert(`Bot choosed ${computerChoice}!`);
-      alert(`You choosed ${humanChoice}!`);
-      alert("round is draw");
+      console.log(`Bot choosed ${computerChoice}!`);
+      console.log(`You choosed ${humanChoice}!`);
+      console.log("round is draw");
     }
   }
   
   for (let i = 1; i <= 5; i++) {
     let round = i;
-    alert(`round ${round}`);
+    console.log(`round ${round}`);
     let humanSelection = getHumanChoice();
     let computerSelection = getComputerChoice();
     playRound(computerSelection, humanSelection);
     if (i === 5) {
       if (computerScore === humanScore) {
-        alert("match draw");
+        console.log("match draw");
       } else if (computerScore > humanScore) {
-        alert("Bot won match");
+        console.log("Bot won match");
       } else {
-        alert("You won match");
+        console.log("You won match");
       }
     }
   }
