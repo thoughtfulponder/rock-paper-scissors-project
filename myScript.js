@@ -37,20 +37,22 @@ function playGame() {
     if (computerChoice === "Rock" && humanChoice === "Paper" ||
       computerChoice === "Paper" && humanChoice === "Scissors" ||
       computerChoice === "Scissors" && humanChoice === "Rock") {
-      alert(`computer choosed ${computerChoice}! and human choosed ${humanChoice}!`);
-      alert("Human win this round!");
+      alert(`You choosed ${computerChoice}!`); 
+      alert(`You choosed ${humanChoice}!`);
+      alert("You win this round!");
       humanScore++;
-      alert(`human scored ${humanScore}`);
+      alert(`You scored ${humanScore}`);
     } else if (computerChoice === "Rock" && humanChoice === "Scissors" ||
       computerChoice === "Paper" && humanChoice === "Rock" ||
       computerChoice === "Scissors" && humanChoice === "Paper") {
-      alert(`computer choosed ${computerChoice}! and human choosed ${humanChoice}!`);
-      alert("computer win this round!");
+      alert(`Bot choosed ${computerChoice}!`); 
+      alert(`You choosed ${humanChoice}!`);
+      alert("Bot win this round!");
       computerScore++;
-      alert(`computer scored ${computerScore}`);
+      alert(`Bot scored ${computerScore}`);
     } else {
-      alert(`computer choosed ${computerChoice}!`);
-      alert(`human choosed ${humanChoice}!`);
+      alert(`Bot choosed ${computerChoice}!`);
+      alert(`You choosed ${humanChoice}!`);
       alert("round is draw");
     }
   }
@@ -65,9 +67,9 @@ function playGame() {
       if (computerScore === humanScore) {
         alert("match draw");
       } else if (computerScore > humanScore) {
-        alert("computer won");
+        alert("Bot won match");
       } else {
-        alert("human won");
+        alert("You won match");
       }
     }
   }
