@@ -46,15 +46,15 @@ function playGame() {
     } else if (computerChoice === "Rock" && humanChoice === "Scissor" ||
       computerChoice === "Paper" && humanChoice === "Rock" ||
       computerChoice === "Scissor" && humanChoice === "Paper") {
-      displayResult.textContent += (`Bot choosed ${computerChoice}!`);
-      console.log(`You choosed ${humanChoice}!`);
-      console.log("Bot win this round!");
+      displayResult.textContent += `\n` + `Bot choosed ${computerChoice}!` + `\n`;
+      displayResult.textContent += `\n` + `You choosed ${humanChoice}!` + `\n`;
+      displayResult.textContent += "\n" + "Bot win this round!" + "\n";
       computerScore++;
-      console.log(`Bot scored ${computerScore}`);
+      displayResult.textContent += `\n` + `Bot scored ${computerScore}` + `\n`;
     } else {
-      console.log(`Bot choosed ${computerChoice}!`);
-      console.log(`You choosed ${humanChoice}!`);
-      console.log("round is draw");
+      displayResult.textContent += `\n` + `Bot choosed ${computerChoice}!` + `\n`;
+      displayResult.textContent += `\n` + `You choosed ${humanChoice}!` + `\n`;
+      displayResult.textContent += "\n" +"round is draw" + "\n";
     }
   }
   let buttons = document.querySelectorAll("button");
@@ -63,7 +63,7 @@ function playGame() {
       /*console.log(button.textContent);*/
       
       round++;
-      displayResult.textContent = `round ${round} `;
+      displayResult.textContent = `round ${round} ` + `\n`;
       let humanSelection = button.textContent;
       let computerSelection =
         getComputerChoice();
@@ -72,11 +72,11 @@ function playGame() {
       
       if (round === 5) {
         if (computerScore === humanScore) {
-          displayResult.textContent += ("match draw");
+          displayResult.textContent += "\n" + "match draw";
         } else if (computerScore > humanScore) {
-          displayResult.textContent += ("Bot won match");
+          displayResult.textContent += "\n" + "Bot won match";
         } else {
-          displayResult.textContent += ("You won match");
+          displayResult.textContent += "\n" + "You won match";
         }
         
       }
