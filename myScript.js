@@ -38,33 +38,33 @@ function playGame() {
     if (computerChoice === "Rock" && humanChoice === "Paper" ||
       computerChoice === "Paper" && humanChoice === "Scissor" ||
       computerChoice === "Scissor" && humanChoice === "Rock") {
-      displayResult.textContent += (`Bot choosed ${computerChoice}! `);
-      displayResult.textContent += (`You choosed ${humanChoice}! `);
-      displayResult.textContent += ("You win this round! ");
+      displayResult.innerHTML += `Bot choosed ${computerChoice}! <br>`;
+      displayResult.innerHTML += `You choosed ${humanChoice}! <br>`;
+      displayResult.innerHTML += "You win this round! <br>";
       humanScore++;
-      displayResult.textContent += (`You scored ${humanScore} `);
+      displayResult.innerHTML += (`You scored ${humanScore}` + `<br>`);
     } else if (computerChoice === "Rock" && humanChoice === "Scissor" ||
       computerChoice === "Paper" && humanChoice === "Rock" ||
       computerChoice === "Scissor" && humanChoice === "Paper") {
-      displayResult.textContent += `\n` + `Bot choosed ${computerChoice}!` + `\n`;
-      displayResult.textContent += `\n` + `You choosed ${humanChoice}!` + `\n`;
-      displayResult.textContent += "\n" + "Bot win this round!" + "\n";
+      displayResult.innerHTML += `Bot choosed ${computerChoice}! <br>`;
+      displayResult.innerHTML += `You choosed ${humanChoice}! <br>`;
+      displayResult.innerHTML += "Bot win this round! <br>";
       computerScore++;
-      displayResult.textContent += `\n` + `Bot scored ${computerScore}` + `\n`;
+      displayResult.innerHTML += `Bot scored ${computerScore} <br>`;
     } else {
-      displayResult.textContent += `\n` + `Bot choosed ${computerChoice}!` + `\n`;
-      displayResult.textContent += `\n` + `You choosed ${humanChoice}!` + `\n`;
-      displayResult.textContent += "\n" +"round is draw" + "\n";
+      displayResult.innerHTML += `Bot choosed ${computerChoice}! <br>`;
+      displayResult.innerHTML += `You choosed ${humanChoice}! <br>`;
+      displayResult.innerHTML += "round is draw <br>";
     }
   }
   let buttons = document.querySelectorAll("button");
   buttons.forEach(button => {
     button.addEventListener("click", () => {
-      /*console.log(button.textContent);*/
+      /*console.log(button.innerHTML);*/
       
       round++;
-      displayResult.textContent = `round ${round} ` + `\n`;
-      let humanSelection = button.textContent;
+      displayResult.innerHTML = `round ${round}` + `<br>`;
+      let humanSelection = button.innerHTML;
       let computerSelection =
         getComputerChoice();
 
@@ -72,11 +72,11 @@ function playGame() {
       
       if (round === 5) {
         if (computerScore === humanScore) {
-          displayResult.textContent += "\n" + "match draw";
+          displayResult.innerHTML += "match draw";
         } else if (computerScore > humanScore) {
-          displayResult.textContent += "\n" + "Bot won match";
+          displayResult.innerHTML += "Bot won match";
         } else {
-          displayResult.textContent += "\n" + "You won match";
+          displayResult.innerHTML += "You won match";
         }
         
       }
