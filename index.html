@@ -5,24 +5,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rock Paper and Scissors</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <p>Round</p>
-  <div class="players-container">
-    <div class="user-side">
-      <p>Player Score:</p>
-      <img src="" alt="" />
+
+  <div class="start-section">
+    <h1>Rock, Paper, Scissor</h1>
+    <button>Start</button>
+  </div>
+
+  <div class="game-section">
+    <p>Round</p>
+    <div class="players-container">
+      <div class="user-side">
+        <p>Player Score:</p>
+        <img src="./assets/user-side-face.svg" alt="user-side" class="players-icon" />
+      </div>
+      <div class="bot-side">
+        <p>Bot Score:</p>
+        <img src="./assets/bot-side-face.svg" alt="bot-side" class="players-icon">
+      </div>
+    </div>
+    <button>Rock</button>
+    <button>Paper</button>
+    <button>Scissor</button>
+    <div id="display-result">
+
     </div>
   </div>
-  <button>Rock</button>
-  <button>Paper</button>
-  <button>Scissor</button>
-  <div id="display-result">
-    
+
+  <div class="end-section">
+    <img src="" alt="">
+    <p></p>
+    <button>Start again</button>
   </div>
-  
-  
+
+
+
   <script src="myScript.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
