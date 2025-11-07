@@ -1,7 +1,67 @@
+/*elements selectors */
+html {
+    height: 100%;
+}
 body {
     background-color: #5CE1E6;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+    max-height: 100vh;
+    height: 100%;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+button {
+    font-family: "Anton", sans-serif;
+    font-size: 2rem;
+    background: linear-gradient(to bottom right,#f9e290, #ffb171, #ff9070);
+    color: white;
+    
+    border-radius: 30px;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* id selectors */
+
+#start-stat {
+    margin-top: 4rem;
+}
+
+/* combined selectiors*/
+
+#start-stat button {
+    font-size: 40px;
+    text-align: center;
+    line-height: 2.5rem;
+    width: 200px;
+    height: 50px;
+}
+
+/* class selectors */
+
+.gradient-text {
+    background: linear-gradient(to right, #eb4b3f, #f0945b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "League Spartan", sans-serif;
+    font-size: 2.3rem;
 }
 
 .players-icon {
     height: 250px;
+}
+
+.hidden {
+    display: none;
 }
