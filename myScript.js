@@ -28,6 +28,26 @@ function getHumanChoice() {
 
 let displayResult = document.querySelector("#display-result");
 
+let gameRound = document.querySelector(".game-round");
+
+let playerScore = document.querySelector(".player-score");
+
+let botScore = document.querySelector(".bot-score");
+
+let playerChoice = document.querySelector(".player-choice");
+
+let playerChoiceImg = document.querySelector(".player-choice-image");
+
+let botChoice = document.querySelector(".bot-choice");
+
+let botChoiceImg = document.querySelector(".bot-choice-image");
+
+let roundWinner = document.querySelector(".round-winner");
+
+let matchWinner = document.querySelector(".match-winner");
+
+let matchWinnerImg = document.querySelector(".winner-image");
+
 function playGame() {
   
   let humanScore = 0;
@@ -38,49 +58,76 @@ function playGame() {
     if (computerChoice === "Rock" && humanChoice === "Paper" ||
       computerChoice === "Paper" && humanChoice === "Scissor" ||
       computerChoice === "Scissor" && humanChoice === "Rock") {
-      displayResult.innerHTML += `Bot choosed ${computerChoice}! <br>`;
-      displayResult.innerHTML += `You choosed ${humanChoice}! <br>`;
-      displayResult.innerHTML += "You win this round! <br>";
+      botChoice.textContent = `Bot choosed ${computerChoice}!`;
+      botChoiceImg.src = `/assets/bot-${computerChoice}-hand.svg`;
+      playerChoice.textContent = `You choosed ${humanChoice}!`;
+      playerChoiceImg.src = `/assets/user-${humanChoice}-hand.svg`;
+      roundWinner.textContent = "You win this round!";
       humanScore++;
-      displayResult.innerHTML += (`You scored ${humanScore}` + `<br>`);
+      playerScore.textContent = `${humanScore}`;
     } else if (computerChoice === "Rock" && humanChoice === "Scissor" ||
       computerChoice === "Paper" && humanChoice === "Rock" ||
       computerChoice === "Scissor" && humanChoice === "Paper") {
-      displayResult.innerHTML += `Bot choosed ${computerChoice}! <br>`;
-      displayResult.innerHTML += `You choosed ${humanChoice}! <br>`;
-      displayResult.innerHTML += "Bot win this round! <br>";
+      botChoice.textContent = `Bot choosed ${computerChoice}!`;
+      botChoiceImg.src = `/assets/bot-${computerChoice}-hand.svg`;
+      playerChoice.textContent = `You choosed ${humanChoice}!`;
+      playerChoiceImg.src = `/assets/user-${humanChoice}-hand.svg`;
+      roundWinner.textContent = "Bot win this round!";
       computerScore++;
-      displayResult.innerHTML += `Bot scored ${computerScore} <br>`;
+      botScore.textContent = `${computerScore}`;
     } else {
-      displayResult.innerHTML += `Bot choosed ${computerChoice}! <br>`;
-      displayResult.innerHTML += `You choosed ${humanChoice}! <br>`;
-      displayResult.innerHTML += "round is draw <br>";
+      botChoice.textContent = `Bot choosed ${computerChoice}!`;
+      botChoiceImg.src = `/assets/bot-${computerChoice}-hand.svg`;
+      playerChoice.textContent = `You choosed ${humanChoice}!`;
+      playerChoiceImg.src = `/assets/user-${humanChoice}-hand.svg`;
+      roundWinner.textContent = "Round is draw";
     }
   }
-  let buttons = document.querySelectorAll("button");
+  let buttons = document.querySelectorAll(".btn");
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       /*console.log(button.innerHTML);*/
       
       round++;
-      displayResult.innerHTML = `round ${round}` + `<br>`;
+      gameRound.textContent = `Round ${round}`;
       let humanSelection = button.innerHTML;
       let computerSelection =
         getComputerChoice();
-
+      
       playRound(computerSelection, humanSelection);
       
-      if (round === 5) {
+      if (computerScore === 5 || humanScore === 5) {
         if (computerScore === humanScore) {
-          displayResult.innerHTML += "match draw";
+          matchWinner.textContent = "Match draw";
         } else if (computerScore > humanScore) {
-          displayResult.innerHTML += "Bot won match";
+          matchWinner.textContent = "Bot won match";
+          matchWinnerImg.src = "/assets/images/bot-front-face.svg";
         } else {
-          displayResult.innerHTML += "You won match";
+          matchWinner.textContent = "You won match";
+          matchWinnerImg.src = "/assets/user-front-face.svg";
         }
-        
+        gameStat.classList.toggle("hidden");
+        endStat.classList.toggle("hidden");
       }
     });
   });
 }
 console.log(playGame());
+
+const startStat = document.querySelector("#start-stat");
+const gameStat = document.querySelector("#game-stat");
+const endStat = document.querySelector("#end-stat");
+const playAgainBtn = document.querySelector(".play-again-btn");
+
+const startBtn = document.querySelector(".start-btn");
+
+startBtn.addEventListener("click", () => {
+  startStat.classList.toggle("hidden");
+  gameStat.classList.toggle("hidden");
+});
+
+playAgainBtn.addEventListener("click", () => {
+  playGame();
+  gameStat.classList.toggle("hidden");
+  endStat.classList.toggle("hidden");
+});

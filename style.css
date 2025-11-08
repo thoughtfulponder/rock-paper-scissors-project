@@ -23,7 +23,6 @@ p {
 
 button {
     font-family: "Anton", sans-serif;
-    font-size: 2rem;
     background: linear-gradient(to bottom right,#f9e290, #ffb171, #ff9070);
     color: white;
     
@@ -38,9 +37,11 @@ button {
     margin-top: 4rem;
 }
 
+
+
 /* combined selectiors*/
 
-#start-stat button {
+.start-btn {
     font-size: 40px;
     text-align: center;
     line-height: 2.5rem;
@@ -59,9 +60,26 @@ button {
 }
 
 .players-icon {
-    height: 250px;
+    height: 150px;
 }
 
 .hidden {
     display: none;
+}
+
+.players-container, .game-actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1.5rem;
+}
+
+.round-winner {
+    padding-bottom: 1rem;
+}
+
+
+
+.pressed {
+    background-color: orangered;
+    color: black;
 }

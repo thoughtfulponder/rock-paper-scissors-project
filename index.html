@@ -19,34 +19,40 @@
   </div>
   
   <div id="game-stat" class="hidden">
-    <p>Round</p>
+    <p class="game-round">Round</p>
     <div class="players-container">
       <div class="user-side">
-        <p>Player Score:</p>
+        <p>Player Score: <span class="player-score">0</span></p>
         <img src="./assets/user-side-face.svg" alt="user-side" class="players-icon" />
       </div>
       <div class="bot-side">
-        <p>Bot Score:</p>
+        <p >Bot Score: <span class="bot-score">0</span></p>
         <img src="./assets/bot-side-face.svg" alt="bot-side" class="players-icon">
       </div>
     </div>
-    <div class="players-actions">
-      
+    <div class="game-actions">
+      <div id="player-action">
+        <p class="player-choice"></p>
+        <img class="player-choice-image" src="" alt="" height="100px"/>
+      </div>
+      <div id="bot-action">
+        <p class="bot-choice"></p>
+        <img class="bot-choice-image" src="" alt="" height="100px"/>
+      </div>
     </div>
-    <div class="round-winner">
-      
-    </div>
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissor</button>
+    <p class="round-winner"></p>
+    
+    <button class="btn">Rock</button>
+    <button class="btn">Paper</button>
+    <button class="btn">Scissor</button>
     <div id="display-result">
       
     </div>
   </div>
   
   <div id="end-stat" class="hidden">
-    <img src="" alt="">
-    <p></p>
+    <img class="winner-image" src="" alt="" height="200px">
+    <p class="match-winner"></p>
     <button class="play-again-btn">Play again</button>
   </div>
   
