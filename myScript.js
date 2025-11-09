@@ -86,11 +86,15 @@ function playGame() {
   let buttons = document.querySelectorAll(".btn");
   buttons.forEach(button => {
     button.addEventListener("click", () => {
+      button.classList.toggle("pressed");
+      setTimeout(() => {
+        button.classList.toggle("pressed");
+      }, 300);
       /*console.log(button.innerHTML);*/
       
       /*round++;*/
       /*gameRound.textContent = `${round}`;*/
-      let humanSelection = button.innerHTML;
+      let humanSelection = button.textContent;
       let computerSelection =
         getComputerChoice();
       
@@ -106,17 +110,18 @@ function playGame() {
           matchWinner.textContent = "You won match";
           matchWinnerImg.src = "/assets/user-front-face.svg";
         }
-        setTimeout( () => {
+        setTimeout(() => {
           gameStat.classList.toggle("hidden");
-        endStat.classList.toggle("hidden");
+          endStat.classList.toggle("hidden");
         }, 2000);
         
       }
       nextRound();
     });
   });
+  
   function nextRound() {
-    setTimeout( () => {
+    setTimeout(() => {
       round++
       gameRound.textContent = round;
       playerChoice.textContent = "";
@@ -128,15 +133,22 @@ function playGame() {
     }, 2000);
   }
   playAgainBtn.addEventListener("click", () => {
-  gameStat.classList.toggle("hidden");
-  endStat.classList.toggle("hidden");
-  humanScore = 0;
-  computerScore = 0;
-  playerScore.textContent = humanScore;
-  botScore.textContent = computerScore;
-  round = 1;
-  gameRound.textContent = round;
-});
+    playAgainBtn.classList.toggle("pressed");
+    setTimeout(() => {
+      playAgainBtn.classList.toggle("pressed");
+    }, 300);
+    setTimeout(() => {
+      gameStat.classList.toggle("hidden");
+      endStat.classList.toggle("hidden");
+    }, 300);
+    
+    humanScore = 0;
+    computerScore = 0;
+    playerScore.textContent = humanScore;
+    botScore.textContent = computerScore;
+    round = 1;
+    gameRound.textContent = round;
+  });
 }
 /*console.log(playGame());*/
 
@@ -148,8 +160,14 @@ const playAgainBtn = document.querySelector(".play-again-btn");
 const startBtn = document.querySelector(".start-btn");
 
 startBtn.addEventListener("click", () => {
-  startStat.classList.toggle("hidden");
-  gameStat.classList.toggle("hidden");
-  playGame();
+  startBtn.classList.toggle("pressed");
+  setTimeout(() => {
+    startBtn.classList.toggle("pressed");
+  }, 300);
+  setTimeout(() => {
+    startStat.classList.toggle("hidden");
+    gameStat.classList.toggle("hidden");
+    playGame();
+  }, 300);
+  
 });
-

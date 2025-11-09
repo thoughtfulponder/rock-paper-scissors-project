@@ -97,7 +97,7 @@ button {
 
 
 .pressed {
-    background-color: orangered;
+    background: white;
     color: black;
 }
 
