@@ -33,7 +33,7 @@ button {
 
 /* id selectors */
 
-#start-stat {
+#start-stat, #game-stat, #end-stat {
     margin-top: 4rem;
 }
 
@@ -99,4 +99,10 @@ button {
 .pressed {
     background-color: orangered;
     color: black;
+}
+
+@media (min-width: 400px) {
+    .players-container, .game-actions {
+        margin: 0 10rem;
+    }
 }
