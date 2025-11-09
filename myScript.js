@@ -59,9 +59,9 @@ function playGame() {
       computerChoice === "Paper" && humanChoice === "Scissor" ||
       computerChoice === "Scissor" && humanChoice === "Rock") {
       botChoice.textContent = `Bot choosed ${computerChoice}!`;
-      botChoiceImg.src = `/assets/bot-${computerChoice}-hand.svg`;
+      botChoiceImg.src = `/assets/images/bot-${computerChoice}-hand.svg`;
       playerChoice.textContent = `You choosed ${humanChoice}!`;
-      playerChoiceImg.src = `/assets/user-${humanChoice}-hand.svg`;
+      playerChoiceImg.src = `/assets/images/user-${humanChoice}-hand.svg`;
       roundWinner.textContent = "You win this round!";
       humanScore++;
       playerScore.textContent = `${humanScore}`;
@@ -69,17 +69,17 @@ function playGame() {
       computerChoice === "Paper" && humanChoice === "Rock" ||
       computerChoice === "Scissor" && humanChoice === "Paper") {
       botChoice.textContent = `Bot choosed ${computerChoice}!`;
-      botChoiceImg.src = `/assets/bot-${computerChoice}-hand.svg`;
+      botChoiceImg.src = `/assets/images/bot-${computerChoice}-hand.svg`;
       playerChoice.textContent = `You choosed ${humanChoice}!`;
-      playerChoiceImg.src = `/assets/user-${humanChoice}-hand.svg`;
+      playerChoiceImg.src = `/assets/images/user-${humanChoice}-hand.svg`;
       roundWinner.textContent = "Bot win this round!";
       computerScore++;
       botScore.textContent = `${computerScore}`;
     } else {
       botChoice.textContent = `Bot choosed ${computerChoice}!`;
-      botChoiceImg.src = `/assets/bot-${computerChoice}-hand.svg`;
+      botChoiceImg.src = `/assets/images/bot-${computerChoice}-hand.svg`;
       playerChoice.textContent = `You choosed ${humanChoice}!`;
-      playerChoiceImg.src = `/assets/user-${humanChoice}-hand.svg`;
+      playerChoiceImg.src = `/assets/images/user-${humanChoice}-hand.svg`;
       roundWinner.textContent = "Round is draw";
     }
   }
@@ -108,7 +108,7 @@ function playGame() {
           matchWinnerImg.src = "/assets/images/bot-front-face.svg";
         } else {
           matchWinner.textContent = "You won match";
-          matchWinnerImg.src = "/assets/user-front-face.svg";
+          matchWinnerImg.src = "/assets/images/user-front-face.svg";
         }
         setTimeout(() => {
           gameStat.classList.toggle("hidden");
