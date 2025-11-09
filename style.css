@@ -53,7 +53,6 @@ button {
 
 .gradient-text {
     background: linear-gradient(to right, #eb4b3f, #f0945b);
-    /* -webkit-background-clip: text; */
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "League Spartan", sans-serif;
@@ -99,6 +98,14 @@ button {
     padding-bottom: 1rem;
 }
 
+.player-choice-image,
+.bot-choice-image {
+    height: 100px;
+}
+
+.winner-image {
+    height: 200px;
+}
 
 
 .pressed {
@@ -111,5 +118,18 @@ button {
     .players-container,
     .game-actions {
         margin: 0 10rem;
+    }
+
+    .players-icon {
+        height: 250px;
+    }
+
+    .player-choice-image,
+    .bot-choice-image {
+        height: 200px;
+    }
+
+    .winner-image {
+        height: 250px;
     }
 }
