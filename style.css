@@ -2,6 +2,7 @@
 html {
     height: 100%;
 }
+
 body {
     background-color: #5CE1E6;
     color: white;
@@ -23,9 +24,9 @@ p {
 
 button {
     font-family: "Anton", sans-serif;
-    background: linear-gradient(to bottom right,#f9e290, #ffb171, #ff9070);
+    background: linear-gradient(to bottom right, #f9e290, #ffb171, #ff9070);
     color: white;
-    
+
     border-radius: 30px;
     border: none;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
@@ -33,7 +34,9 @@ button {
 
 /* id selectors */
 
-#start-stat, #game-stat, #end-stat {
+#start-stat,
+#game-stat,
+#end-stat {
     margin-top: 4rem;
 }
 
@@ -84,7 +87,8 @@ button {
     display: none;
 }
 
-.players-container, .game-actions {
+.players-container,
+.game-actions {
     display: flex;
     justify-content: space-between;
     margin: 0 1.5rem;
@@ -101,8 +105,10 @@ button {
     color: black;
 }
 
-@media (min-width: 400px) {
-    .players-container, .game-actions {
+@media (min-width: 1200px) {
+
+    .players-container,
+    .game-actions {
         margin: 0 10rem;
     }
 }
