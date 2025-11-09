@@ -52,7 +52,7 @@ function playGame() {
   
   let humanScore = 0;
   let computerScore = 0;
-  let round = 0;
+  let round = 1;
   
   function playRound(computerChoice, humanChoice) {
     if (computerChoice === "Rock" && humanChoice === "Paper" ||
@@ -88,8 +88,8 @@ function playGame() {
     button.addEventListener("click", () => {
       /*console.log(button.innerHTML);*/
       
-      round++;
-      gameRound.textContent = `Round ${round}`;
+      /*round++;*/
+      /*gameRound.textContent = `${round}`;*/
       let humanSelection = button.innerHTML;
       let computerSelection =
         getComputerChoice();
@@ -106,13 +106,39 @@ function playGame() {
           matchWinner.textContent = "You won match";
           matchWinnerImg.src = "/assets/user-front-face.svg";
         }
-        gameStat.classList.toggle("hidden");
+        setTimeout( () => {
+          gameStat.classList.toggle("hidden");
         endStat.classList.toggle("hidden");
+        }, 2000);
+        
       }
+      nextRound();
     });
   });
+  function nextRound() {
+    setTimeout( () => {
+      round++
+      gameRound.textContent = round;
+      playerChoice.textContent = "";
+      playerChoiceImg.src = "";
+      botChoice.textContent = "";
+      botChoiceImg.src = "";
+      roundWinner.textContent = "";
+      
+    }, 2000);
+  }
+  playAgainBtn.addEventListener("click", () => {
+  gameStat.classList.toggle("hidden");
+  endStat.classList.toggle("hidden");
+  humanScore = 0;
+  computerScore = 0;
+  playerScore.textContent = humanScore;
+  botScore.textContent = computerScore;
+  round = 1;
+  gameRound.textContent = round;
+});
 }
-console.log(playGame());
+/*console.log(playGame());*/
 
 const startStat = document.querySelector("#start-stat");
 const gameStat = document.querySelector("#game-stat");
@@ -124,10 +150,6 @@ const startBtn = document.querySelector(".start-btn");
 startBtn.addEventListener("click", () => {
   startStat.classList.toggle("hidden");
   gameStat.classList.toggle("hidden");
+  playGame();
 });
 
-playAgainBtn.addEventListener("click", () => {
-  playGame();
-  gameStat.classList.toggle("hidden");
-  endStat.classList.toggle("hidden");
-});
